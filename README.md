@@ -2,6 +2,8 @@
 
 Use Electron and React to practice [line](https://line.me/zh-hant/download) UI.
 
+![img](./screen1.png)
+
 // avatar img copy from [semantic-ui](https://semantic-ui.com/)
 
 ## library
