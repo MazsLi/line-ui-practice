@@ -1,0 +1,38 @@
+{
+  "name": "line-ui-practice",
+  "version": "0.0.1",
+  "description": "Use Electron and React to practice line UI",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron ./build/main.js",
+    "start-log": "./node_modules/.bin/electron ./build/main.js --debug=* --dev",
+    "webpack": "./node_modules/.bin/webpack -w --mode=development",
+    "webpack-p": "./node_modules/.bin/webpack -w --mode=production"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "debug": "^3.1.0",
+    "electron": "^2.0.3",
+    "file-loader": "^1.1.11",
+    "prop-types": "^15.6.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.1",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "@material-ui/core": "^1.2.3",
+    "@material-ui/icons": "^1.1.0",
+    "gsap": "^2.0.1"
+  }
+}
