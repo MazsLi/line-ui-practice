@@ -47,7 +47,7 @@ const testData = {
     'id5': {
         id: 'id5',
         name: 'Tom',
-        photoSrc: require('Assets/men3.png'),
+        photoSrc: require('Assets/men4.png'),
         msgAry: [
             {
                 msg: "chat chat chat room",
@@ -68,7 +68,7 @@ const testData = {
     'id7': {
         id: 'id7',
         name: 'Messi',
-        photoSrc: require('Assets/men4.png'),
+        photoSrc: require('Assets/men3.png'),
         msgAry: [
             {
                 msg: 'Thanks!!',
@@ -78,6 +78,24 @@ const testData = {
                 isMe: true,
                 msg: 'Congratulations to Argentina on entering a round of 16.',
                 time: 1530159600000, // 2018/06/28 16:20
+            },
+            {
+                isMe: true,
+                msg: 'Messi!!!',
+                time: 1530173940000, // 2018/06/28 16:19
+            },
+            {
+                msg: "Fighting~~~~~",
+                time: 1530001500000, // 2018/06/26 16:25
+            },
+            {
+                msg: "I'll try my best!!",
+                time: 1530001200000, // 2018/06/26 16:20
+            },
+            {
+                isMe: true,
+                msg: 'Keep your chin up. Stick to it!',
+                time: 1529900340000, // 2018/06/25 12:19
             },
         ]
     },

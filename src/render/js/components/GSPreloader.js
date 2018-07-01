@@ -10,9 +10,9 @@ let testOptions = { // example
     // boxOpacity: 0.2,
     // boxBorder: "1px solid #AAA",
     // dotClass: 'preloader-dot',
-    text: true,
+    text: 'download', // boolean or text
     parent: document.body, // preloader parent element
-    colors: ["#773344", "#E3B5A4", "#F5E9E2", "#0B0014", "#D44D5C"], // have as many or as few colors as you want.
+    colors: ["#3AB795", "#A0E8AF", "#86BAA1"], // have as many or as few colors as you want.
     dotRadius: '50%', // 0% to 50% = square to circular 
     // top: '45%',  // top in parent
     // left: '50%', // left in parent
@@ -59,7 +59,7 @@ var GSPreloader = module.exports = function( options = testOptions ) {
     TweenLite.set(
         box, 
         {
-            width: radius * 2 + 70, 
+            width: radius * 2 + 70, // 100vw
             height: radius * 2 + 70, 
             borderRadius:"14px", 
             backgroundColor:options.boxColor || "white", 

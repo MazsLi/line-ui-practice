@@ -46,9 +46,13 @@ const styles = theme => ({
         padding: '10px 0 0 0',
     },
     listItem: {
-        padding: 0,
-        margin: '0 0 0 10px',
+        padding: '0 0 0 10px',
         height: '60px'
+    },
+    listItemSelect: {
+        padding: '0 0 0 10px',
+        height: '60px',
+        background: grey[300]
     },
     listItemText: {
         fontSize: 12
@@ -69,6 +73,7 @@ class ChatList extends React.Component {
         super(props);
         this.state = {
             allData: Data.getData()||[],
+            currentID: 'id7',
         }
     }
 
@@ -86,7 +91,8 @@ class ChatList extends React.Component {
                     onMouseEnter={this.itemHover.bind(this, personObj.name, false)}
                     onMouseLeave={this.itemHover.bind(this, personObj.name, true)}
                     name={personObj.name}
-                    className={classes.listItem} key={index}>
+                    className={ (this.state.currentID==personObj.id)? classes.listItemSelect: classes.listItem} 
+                    key={index}>
                     <ListItemAvatar>
                         <Avatar>
                             { (personObj.photoSrc)? <img className={classes.avatar} src={personObj.photoSrc}/>: <PersonIcon/> }
