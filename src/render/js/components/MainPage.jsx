@@ -4,7 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import SideBar from './SideBar';
 import ChatList from './ChatList';
 import Chatroom from './Chatroom';
-import GSPreloader from './GSPreloader';
 import CloseIcon from '@material-ui/icons/Close';
 import MaximizeIcon from '@material-ui/icons/WebAsset';
 import MinimizeIcon from '@material-ui/icons/Remove';
@@ -84,12 +83,6 @@ class MainPage extends React.Component{
 
 	switchPage = (which) => {
 
-		let gsPreloader = new GSPreloader();
-
-		setTimeout( () => {
-			gsPreloader.toggle();
-			// gsPreloader.pause();
-		}, 15000)
 		console.log(which)
 
 	}

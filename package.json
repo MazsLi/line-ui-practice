@@ -17,22 +17,21 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "copy-webpack-plugin": "^4.5.1",
-    "css-loader": "^0.28.11",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
     "debug": "^3.1.0",
-    "electron": "^2.0.3",
     "file-loader": "^1.1.11",
     "prop-types": "^15.6.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "url-loader": "^1.0.1",
-    "webpack": "^4.10.2",
-    "webpack-cli": "^3.0.1",
+    "webpack-cli": "^3.3.11",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "@material-ui/core": "^1.2.3",
     "@material-ui/icons": "^1.1.0",
-    "gsap": "^2.0.1"
+    "electron": "^8.1.0",
+    "webpack": "^4.42.0"
   }
 }

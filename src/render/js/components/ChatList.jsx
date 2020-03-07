@@ -13,7 +13,6 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Avatar from '@material-ui/core/Avatar';
 import grey from '@material-ui/core/colors/grey';
 import PersonIcon from '@material-ui/icons/Person';
-import TimelineMax from "gsap/TimelineMax";
 import Data from './data';
 
 const styles = theme => ({

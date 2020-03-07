@@ -1,56 +1,57 @@
 
-import { app, BrowserWindow, protocol } from 'electron' ;
-import path from 'path';
-import debug from 'debug';
+const path = require('path');
+const debug = require('debug');
+const { app, BrowserWindow, protocol } = require('electron')
 
-debug('core:main')('process.argv: ' + process.argv);
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// 有些 API 只能在這個事件發生後才能用。
+app.on('ready', () => {
+  createWindow();
+})
 
-// electron app ready
-app.on( 'ready', () => {
+function createWindow () {
 
-    registerProtocol( 'build', path.resolve( process.cwd(), 'build' ) );
+  debug('core:app')('ready...');
 
-    debug('core:app')('ready...');
-
-    let mainWindow = new BrowserWindow({
-        width: 685,
-        resizable: false,
-        frame: false,
-        useContentSize: true,
-    });
-    
-    // load entry html
-    mainWindow.loadURL( path.resolve('./build/html/index.html') );
-
-    if( process.argv.indexOf('--dev')>-1 ) {
-        // open debug tool
-        mainWindow.webContents.openDevTools({
-            mode: 'undocked', // right, bottom, undocked, detach
-        });
+  // Create the browser window.
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true
     }
+  })
 
-});
+  registerProtocol('build', path.resolve( process.cwd(), 'build' ));
+
+  // and load the index.html of the app.
+  win.loadFile('./html/index.html');
+
+  // Open the DevTools.
+  // win.webContents.openDevTools()
+}
 
 // register protocol (need after app ready)
 function registerProtocol( name, refDir ) {
 
-    // protocol need use lower case
-    name = name.toLowerCase();
+  // protocol need use lower case
+  name = name.toLowerCase();
+  debug('core:protocol')( `register: ${name} to ${refDir}`);
 
-    protocol.registerFileProtocol( name, (request, callback) => {
+  protocol.registerFileProtocol( name, (request, callback) => {
 
-        const url = path.normalize( request.url ).substr( name.length + 1 );
-        
-        debug('core:protocol')( 'before: ' + url );
-        debug('core:protocol')( 'after: ' + path.join( refDir, url ) );
-        
-        callback({ 
-            path: path.join( refDir, url ) 
-        })
+    if (request.url) {
+      const url = path.normalize( request.url ).substr( name.length + 1 );
+    
+      debug('core:protocol')( 'before: ' + url );
+      debug('core:protocol')( 'after: ' + path.join( refDir, url ) );
+      
+      callback(path.join( refDir, url ))
+    } else {
+      console.error( 'Failed to register protocol: ' + name );
+    }
 
-    }, (error) => {
-        if (error) console.error( 'Failed to register protocol: ' + name );
-        else debug('core:protocol')( 'Success to register protocol: ' + name );
-    });
+  });
     
 }

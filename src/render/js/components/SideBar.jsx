@@ -16,7 +16,6 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import grey from '@material-ui/core/colors/grey';
-import TimelineMax from "gsap/TimelineMax";
 
 const styles = {
     root: {
@@ -119,19 +118,6 @@ class SideBar extends React.Component {
         this.setState({
             currentItem: which
         })
-
-        let item = `#${which}`;
-        
-        let tl = new TimelineMax();
-        tl.to( item, .3, {
-            scale: 1.3
-        })
-        .to( item, .2, {
-           scale: .8
-        })
-        .to( item, .1, {
-           scale: 1
-        });
 
     }
 
